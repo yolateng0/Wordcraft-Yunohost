@@ -6,7 +6,7 @@ description.en = "Open-source word processor (.docx) running in the browser via 
 description.fr = "Traitement de texte open source (.docx) dans le navigateur via WebAssembly"
 
 # Version amont + "~ynh1" (incrémenter ~ynh2, ~ynh3… pour une retouche du paquet seule)
-version = "0.15.0~ynh1"
+version = "0.15.1~ynh1"
 
 maintainers = ["yolateng0"]
 
