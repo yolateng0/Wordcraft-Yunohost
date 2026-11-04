@@ -1,5 +1,3 @@
-WordCraft est un traitement de texte open source écrit en Rust, avec une interface proche de Word
-(ruban, styles, tableaux, suivi des modifications). Il lit et écrit les fichiers .docx et tourne
-directement dans le navigateur grâce à WebAssembly.
+WordCraft is an open-source word processor written in Rust, with a Word-like interface (ribbon, styles, tables, track changes). It reads and writes .docx files and runs directly in the browser thanks to WebAssembly.
 
-Les documents sont ouverts et enregistrés depuis le navigateur : le serveur ne fait que servir l'application.
+Documents are opened and saved from the browser: the server only serves the application. Access is protected by the YunoHost SSO portal, so only your YunoHost users (LDAP directory) can open it by default.

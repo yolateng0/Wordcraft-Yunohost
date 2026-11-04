@@ -20,8 +20,10 @@ yunohost = ">= 12.0.0"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
-ldap = false
-sso = false
+# WordCraft n'a pas de comptes utilisateurs : l'accès est protégé par le portail
+# SSO de YunoHost (permissions SSOWAT adossées à l'annuaire LDAP), pas par l'app.
+ldap = "not_relevant"
+sso = "not_relevant"
 disk = "100M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -34,9 +36,11 @@ ram.runtime = "50M"
     type = "path"
     default = "/wordcraft"
 
+    # Accès restreint par défaut aux utilisateurs YunoHost (annuaire LDAP).
+    # Choisir "visitors" pour un accès public, ou un groupe précis.
     [install.init_main_permission]
     type = "group"
-    default = "visitors"
+    default = "all_users"
 
 [resources]
     # Release web officielle de WordCraft (wordcraft-web-<version>.zip)
@@ -53,3 +57,7 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+    main.label = "WordCraft"
+    main.show_tile = true
+    # Pas de compte côté app : inutile de transmettre l'identité SSO en en-tête HTTP
+    main.auth_header = false
